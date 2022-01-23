@@ -4,10 +4,12 @@ package com.vallegrande.Repository;
 import com.vallegrande.Entity.Person;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Singleton
 public class PersonRepository {
 
     @Inject
