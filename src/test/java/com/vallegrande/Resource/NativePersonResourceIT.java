@@ -1,4 +1,4 @@
-package com.vallegrande.Controller;
+package com.vallegrande.Resource;
 
 import io.quarkus.test.junit.NativeImageTest;
 

@@ -1,4 +1,4 @@
-package com.vallegrande.Service;
+package com.vallegrande.Repository;
 
 
 import com.vallegrande.Entity.Person;
@@ -10,30 +10,29 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Singleton
-public class PersonService {
+public class PersonRepository {
 
     @Inject
     EntityManager entityManager;
 
-    public List getPersons(){
-        return entityManager.createQuery("SELECT p FROM Person p")
-                .getResultList();
+    public List getPersons() {
+        return entityManager.createQuery("SELECT p FROM Person p").getResultList();
     }
 
-    public Person getPerson(int idPerson){
+    public Person getPerson(int idPerson) {
         return entityManager.find(Person.class, idPerson);
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
-    public Person addPerson(Person person){
+    public Person addPerson(Person person) {
         entityManager.persist(person);
         return person;
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
-    public void updatePerson(int idPerson,Person person){
+    public void updatePerson(int idPerson, Person person) {
         Person personToUpdate = entityManager.find(Person.class, idPerson);
-        if (null != personToUpdate){
+        if (null != personToUpdate) {
             personToUpdate.setNamePerson(person.getNamePerson());
             personToUpdate.setLastnamePerson(person.getLastnamePerson());
             personToUpdate.setDniPerson(person.getDniPerson());
@@ -43,7 +42,7 @@ public class PersonService {
     }
 
     @Transactional(Transactional.TxType.REQUIRED)
-    public void deletePerson(int idPerson){
+    public void deletePerson(int idPerson) {
         Person person = getPerson(idPerson);
         entityManager.remove(person);
 
