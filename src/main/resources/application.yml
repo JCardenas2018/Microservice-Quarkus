@@ -1,0 +1,4 @@
+quarkus:
+  application:
+    name: Microservice with quarkus
+    version: 1.0.0
