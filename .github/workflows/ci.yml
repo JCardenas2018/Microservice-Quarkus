@@ -24,7 +24,8 @@ jobs:
         run: |
          ip=$(<ip.txt)
          echo $ip
+         export VARNAME="Hello, World!"
          printenv
          ip=$ip
-         sed -i 's/#{IP}/$ip/g' ip.json
+         sed -i 's/#{IP}/$VARNAME/g' ip.json
          cat ip.json
