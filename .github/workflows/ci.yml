@@ -24,6 +24,6 @@ jobs:
         run: |
          ip=$(<ip.txt)
          echo $ip
-         export ip=$ip
+         ip=$ip
          sed -i 's/#{IP}/$ip/g' ip.json
          cat ip.json
