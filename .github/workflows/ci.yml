@@ -25,5 +25,5 @@ jobs:
          ip=$(<ip.txt)
          echo $ip
          ip=$ip
-         sed -i 's/#{IP}/$ip/g' ip.json
+         sed -i 's/#{IP}/${{ env.ip }}/g' ip.json
          cat ip.json
