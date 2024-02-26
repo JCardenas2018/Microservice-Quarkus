@@ -23,7 +23,7 @@ jobs:
       - name: CommandLine3
         run: |
          ip=$(<ip.txt)
-         echo "ip=hola" >> $GITHUB_ENV
+         echo "ip=$ip" >> $GITHUB_ENV
 
       - name: CommandLine4
         run: |
