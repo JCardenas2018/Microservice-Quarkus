@@ -24,3 +24,12 @@ jobs:
         run: |
          ip=$(<ip.txt)
          echo $ip
+      - name: Replace string in file
+        uses: MathieuSoysal/replace-string-in-file@v1.0.0
+        with:
+          file: ip.json
+          old-string: IP
+          new-string: $ip
+      - name: CommandLine4
+        run: |
+         cat ip.json
