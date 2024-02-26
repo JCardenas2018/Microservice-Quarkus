@@ -14,10 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: CommandLine
-        run: sed -i 's/PublicIp//g' ip.txt
+        run: |
+         sed -i 's/PublicIp//g' ip.txt
+         sed -i 's/"//g' ip.txt
+         sed -i 's/://g' ip.txt
       - name: CommandLine2
-        run: sed -i 's/"//g' ip.txt
-      - name: CommandLine3
         run: ls
-      - name: CommandLine4
-        run: cat ip.txt
+      - name: CommandLine3
+        run: ip=$( cat ip.txt )
+      - name: CommandLine3
+        run: echo $ip
