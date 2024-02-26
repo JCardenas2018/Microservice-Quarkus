@@ -22,6 +22,5 @@ jobs:
         run: ls
       - name: CommandLine3
         run: |
-         cat ip.txt
-         var=$(<ip.txt)
-         echo $var
+         ip=$(<ip.txt)
+         echo $ip
