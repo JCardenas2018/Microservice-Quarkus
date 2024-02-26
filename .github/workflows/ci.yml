@@ -24,7 +24,7 @@ jobs:
         run: |
          ip=$(<ip.txt)
          echo $ip
-         sed -i 's/ip/$ip/g' ip.txt
+         sed -i 's/IP/$ip/g' ip.txt
       - name: CommandLine4
         run: |
          cat ip.json
