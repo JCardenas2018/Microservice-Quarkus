@@ -16,6 +16,8 @@ jobs:
       - name: CommandLine
         run: sed -i 's/PublicIp//g' ip.txt
       - name: CommandLine2
-        run: ls
+        run: sed -i 's/"//g' ip.txt
       - name: CommandLine3
+        run: ls
+      - name: CommandLine4
         run: cat ip.txt
