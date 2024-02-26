@@ -23,5 +23,7 @@ jobs:
       - name: CommandLine3
         run: |
          ip=$(<ip.txt)
-         echo $ip | sed -i 's/#{IP}/$ip/g' ip.json
+         echo $ip
+         EXPORT ip=$ip
+         sed -i 's/#{IP}/$ip/g' ip.json
          cat ip.json
