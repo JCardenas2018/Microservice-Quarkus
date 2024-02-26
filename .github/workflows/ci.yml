@@ -23,6 +23,5 @@ jobs:
       - name: CommandLine3
         run: |
          ip=$(<ip.txt)
-         echo $ip
-         sed -i 's/#{IP}/$ip/g' ip.txt
+         echo $ip | sed -i 's/#{IP}/$ip/g' ip.txt
          cat ip.json
