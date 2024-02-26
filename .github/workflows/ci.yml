@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: CommandLine
-        run: sed -i 's/ PublicIp,//' ip.txt
+        run: sed -i 's/PublicIp//g' ip.txt
       - name: CommandLine2
         run: ls
       - name: CommandLine3
