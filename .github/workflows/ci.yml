@@ -21,6 +21,8 @@ jobs:
       - name: CommandLine2
         run: ls
       - name: CommandLine3
-        run: ip=$( cat ip.txt )
-      - name: CommandLine3
-        run: echo $ip
+        run: |
+         cat ip.txt
+         ip=$( cat ip.txt )
+      - name: CommandLine4
+        run: echo "$ip"
