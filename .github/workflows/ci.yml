@@ -2,6 +2,9 @@
 
 name: Quarkus Codestart CI
 
+env:
+  VARNAME: $VARNAME
+
 on:
   push:
     branches: [ main ]
