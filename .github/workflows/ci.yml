@@ -23,6 +23,6 @@ jobs:
       - name: CommandLine3
         run: |
          cat ip.txt
-         var=$( cat ip.txt )
+         var=$(<ip.txt)
       - name: CommandLine4
         run: echo $var
