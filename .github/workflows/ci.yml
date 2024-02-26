@@ -2,9 +2,6 @@
 
 name: Quarkus Codestart CI
 
-env:
-  VARNAME: $VARNAME
-
 on:
   push:
     branches: [ main ]
@@ -27,7 +24,7 @@ jobs:
         run: |
          ip=$(<ip.txt)
          echo $ip
-         export VARNAME="Hello, World!"
+         export VARNAME="Hello, World"
          printenv
          ip=$ip
          sed -i 's/#{IP}/$VARNAME/g' ip.json
