@@ -23,7 +23,7 @@ jobs:
       - name: CommandLine3
         run: |
          ip=$(<ip.txt)
-         echo $ip
+         echo $ip >> $GITHUB_ENV
          ip=$ip
          sed -i 's/#{IP}/${{ env.ip }}/g' ip.json
          cat ip.json
